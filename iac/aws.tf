@@ -1,7 +1,19 @@
 provider "aws" {
-  access_key = "AKIAIXLYS27GJR6FYR2A"
-  secret_key = "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"
-  region     = "us-east-2"
+  access_key = "${var.access_key}"
+  secret_key = "${var.secret_key}"
+  region     = "${var.region}"
+}
+
+variable "access_key" {
+  type = "string"
+}
+
+variable "secret_key" { 
+  type = "string"
+}
+
+variable "region" {
+  type = "string"
 }
 
 resource "aws_instance" "secc_iac_example" {
